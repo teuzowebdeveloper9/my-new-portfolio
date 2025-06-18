@@ -7,8 +7,8 @@ import teuzoDev from '../images/teuzo.png';
 function Welcome() {
   const handledownload = () => {
     const link = document.createElement("a");
-    link.href = "/curriculo.pdf";
-    link.download = "curriculo.pdf";
+    link.href = "/curriculo (1).pdf";
+    link.download = "curriculo (1).pdf";
     link.click();
   };
 
