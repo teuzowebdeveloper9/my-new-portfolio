@@ -30,18 +30,9 @@ function Works() {
           </div>
         
           <div className="w-full lg:w-1/2 text-white space-y-4">
-            <h2 className="text-2xl font-bold text-[#6B21A8]">estagio de desenvolvimento full stack -avanti</h2>
+            <h2 className="text-2xl font-bold text-[#6B21A8]">desenvolvedor full stack -avanti</h2>
             <p className="text-gray-300 mb-6">
-             Durante meu estágio em desenvolvimento full stack na Avanti, uma empresa especializada na criação de e-commerces de alta performance, atuei diretamente no desenvolvimento de aplicações modernas com foco em Server-Side Rendering (SSR), utilizando tecnologias como React, Node.js e MongoDB. Integrado a squads ágeis e multidisciplinares, colaborei ativamente com designers, product owners e desenvolvedores, seguindo as metodologias Scrum e Kanban, sempre com foco em escalabilidade, usabilidade e entrega contínua de valor. Um dos momentos de maior destaque foi minha liderança na resolução de um problema crítico relacionado à experiência do usuário em uma interface SSR. Após relatos de dificuldades de navegação, conduzi uma investigação minuciosa que revelou um problema de compatibilidade em versões antigas do navegador Edge, causado por uma implementação de scroll personalizado. Com base nessa descoberta, propus ajustes estratégicos na renderização e nos estilos aplicados, o que resultou em uma melhoria significativa na compatibilidade entre navegadores e na usabilidade geral da aplicação. Essa experiência me proporcionou um grande desenvolvimento em áreas como diagnóstico técnico avançado, comunicação eficaz com stakeholders, liderança de iniciativas técnicas e colaboração com times de QA e front-end para garantir entregas com qualidade. Meu período na Avanti foi marcado por aprendizados sólidos e pela oportunidade de impactar positivamente produtos reais utilizados por milhares de usuários.
-
-
-
-
-
-
-
-
-
+             Durante meu trabalho  em desenvolvimento full stack na Avanti, uma empresa especializada na criação de e-commerces de alta performance, atuei diretamente no desenvolvimento de aplicações modernas com foco em Server-Side Rendering (SSR), utilizando tecnologias como React, Node.js e MongoDB. Integrado a squads ágeis e multidisciplinares, colaborei ativamente com designers, product owners e desenvolvedores, seguindo as metodologias Scrum e Kanban, sempre com foco em escalabilidade, usabilidade e entrega contínua de valor. Um dos momentos de maior destaque foi minha liderança na resolução de um problema crítico relacionado à experiência do usuário em uma interface SSR. Após relatos de dificuldades de navegação, conduzi uma investigação minuciosa que revelou um problema de compatibilidade em versões antigas do navegador Edge, causado por uma implementação de scroll personalizado. Com base nessa descoberta, propus ajustes estratégicos na renderização e nos estilos aplicados, o que resultou em uma melhoria significativa na compatibilidade entre navegadores e na usabilidade geral da aplicação. Essa experiência me proporcionou um grande desenvolvimento em áreas como diagnóstico técnico avançado, comunicação eficaz com stakeholders, liderança de iniciativas técnicas e colaboração com times de QA e front-end para garantir entregas com qualidade. Meu período na Avanti foi marcado por aprendizados sólidos e pela oportunidade de impactar positivamente produtos reais utilizados por milhares de usuários.
             </p>
           </div>
          
