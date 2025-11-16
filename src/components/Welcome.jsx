@@ -7,10 +7,12 @@ import teuzoDev from '../images/teuzo.png';
 function Welcome() {
   const handledownload = () => {
     const link = document.createElement("a");
-    link.href = "/curriculo (1).pdf";
-    link.download = "curriculo (1).pdf";
+    link.href = "/Mateus da Silva Oliveira-CV.pdf";
+    link.download = "Mateus da Silva Oliveira-CV.pdf";
     link.click();
   };
+
+  
 
   return (
     <div className="w-full mx-auto min-h-screen border-b-4 border-[#6B21A8] bg-[#0D0D0D]  mb-10 flex flex-col items-center px-4 py-6">
