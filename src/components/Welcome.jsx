@@ -8,6 +8,7 @@ import { SiGooglecloud } from "react-icons/si";
 import teuzoDev from '../images/teuzo.png';
 import portraitMain from '../images/portrait-main.png';
 import portraitSecondary from '../images/portrait-secondary.png';
+import HeroGlow from "./HeroGlow";
 
 function Welcome() {
   const downloadFile = (path, fileName) => {
@@ -36,7 +37,8 @@ function Welcome() {
   ];
 
   return (
-    <div className="w-full mx-auto min-h-screen border-b-4 border-[#6B21A8] bg-[#0D0D0D] mb-10 flex flex-col items-center px-4 py-10">
+    <div className="relative w-full mx-auto min-h-screen border-b-4 border-[#6B21A8] bg-[#0D0D0D] mb-10 flex flex-col items-center px-4 py-10 overflow-hidden">
+      <HeroGlow />
       <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div className="space-y-5">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1f102f] text-[#a855f7] border border-[#6B21A8]">
