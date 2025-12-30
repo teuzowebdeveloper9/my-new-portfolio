@@ -1,52 +1,94 @@
-import avantiBig from '../images/avantiBig.jpg'
-import avantione from '../images/avantiOne.webp'
-import avantiTwo from '../images/avantiTwo.jpg'
-
 function Works() {
-    return ( 
-          <>
-                <h1 className='flex justify-center items-center text-[#6B21A8] text-3xl font-extrabold mb-3'>Experiência Profissional</h1>
-                
-                
-                <div className="flex flex-col lg:flex-row  mb-6 items-center gap-8 p-6">
-          <div className="relative w-full lg:w-1/2 h-[400px] flex justify-center items-center">
-            <img 
-              src={avantiBig}
-              alt="Principal" 
-              className="rounded-2xl animate-float w-[300px] h-[300px] object-cover shadow-lg" 
-            />
-        
-            <img 
-              src={avantione}
-              alt="Menor 1" 
-              className="absolute top-[-20px] animate-float left-[30px] w-[120px] h-[120px] rounded-xl object-cover border-4 border-white shadow-md" 
-            />
-        
-            <img 
-              src={avantiTwo}
-              alt="Menor 2" 
-              className="absolute bottom-[-20px] animate-float right-[30px] w-[120px] h-[120px] rounded-xl object-cover border-4 border-white shadow-md" 
-            />
-          </div>
-        
-          <div className="w-full lg:w-1/2 text-white space-y-4">
-            <h2 className="text-2xl font-bold text-[#6B21A8]">desenvolvedor full stack -avanti</h2>
-            <p className="text-gray-300 mb-6">
-             Durante meu trabalho  em desenvolvimento full stack na Avanti, uma empresa especializada na criação de e-commerces de alta performance, atuei diretamente no desenvolvimento de aplicações modernas com foco em Server-Side Rendering (SSR), utilizando tecnologias como React, Node.js e MongoDB. Integrado a squads ágeis e multidisciplinares, colaborei ativamente com designers, product owners e desenvolvedores, seguindo as metodologias Scrum e Kanban, sempre com foco em escalabilidade, usabilidade e entrega contínua de valor. Um dos momentos de maior destaque foi minha liderança na resolução de um problema crítico relacionado à experiência do usuário em uma interface SSR. Após relatos de dificuldades de navegação, conduzi uma investigação minuciosa que revelou um problema de compatibilidade em versões antigas do navegador Edge, causado por uma implementação de scroll personalizado. Com base nessa descoberta, propus ajustes estratégicos na renderização e nos estilos aplicados, o que resultou em uma melhoria significativa na compatibilidade entre navegadores e na usabilidade geral da aplicação. Essa experiência me proporcionou um grande desenvolvimento em áreas como diagnóstico técnico avançado, comunicação eficaz com stakeholders, liderança de iniciativas técnicas e colaboração com times de QA e front-end para garantir entregas com qualidade. Meu período na Avanti foi marcado por aprendizados sólidos e pela oportunidade de impactar positivamente produtos reais utilizados por milhares de usuários.
-            </p>
-          </div>
-         
+  const experiences = [
+    {
+      company: "Lasy AI",
+      title: "Full Stack / IA Engineer",
+      period: "out/2025 – atual",
+      highlights: [
+        "Automação multiagente e pipelines de streaming integrando GPT/Claude/Mistral.",
+        "Ferramentas custom (tools) com vetores, RAG e governança de dados.",
+        "CI/CD com Docker e GCP, garantindo performance e observabilidade.",
+      ],
+      tag: "IA & Cloud",
+    },
+    {
+      company: "High Scale",
+      title: "Desenvolvedor Full Stack Pleno",
+      period: "ago/2025 – atual",
+      highlights: [
+        "Soluções B2B em .NET/TypeScript com SLAs rígidos em GCP.",
+        "APIs seguras, observabilidade e hardening de serviços.",
+        "Decisões de arquitetura e escalabilidade com entregas contínuas.",
+      ],
+      tag: "Plataformas B2B",
+    },
+    {
+      company: "Infinity Force",
+      title: "Desenvolvedor Full Stack",
+      period: "jun/2025 – ago/2025",
+      highlights: [
+        "Aplicações Web3 (Ethereum/Solana) com NestJS, PostgreSQL e MongoDB.",
+        "Integrações com carteiras digitais e pipelines seguros.",
+        "Ambientes escaláveis com Docker e práticas DevSecOps.",
+      ],
+      tag: "Web3",
+    },
+    {
+      company: "Avanti",
+      title: "Desenvolvedor Full Stack",
+      period: "abr/2024 – mai/2025",
+      highlights: [
+        "E-commerces de alta performance com React, Node.js e MongoDB.",
+        "SSR focado em SEO, experiência e compatibilidade entre navegadores.",
+        "Trabalho em squads ágeis, liderando diagnósticos e melhorias críticas.",
+      ],
+      tag: "E-commerce",
+    },
+  ];
+
+  return (
+    <section className="w-full mx-auto border-b-4 border-[#6B21A8] bg-[#0D0D0D] mb-12 px-4 py-10">
+      <div className="max-w-6xl mx-auto space-y-6">
+        <div className="space-y-2">
+          <h1 className="flex justify-center items-center text-[#6B21A8] text-3xl font-extrabold">
+            Experiência Profissional
+          </h1>
+          <p className="text-center text-gray-200">
+            Estruturei produtos complexos em IA, B2B, Web3 e e-commerce, sempre com foco em performance,
+            segurança e entregas rápidas.
+          </p>
         </div>
-         <div className=' flex flex-row items-center  justify-center h-[400px] w-[400px] mb-6'>
-            <div className="border-4 border-[#6B21A8] text-white max-w-2xl w-full break-words mx-auto px-4 py-2 mb-6">
-                <h1 className='flex justify-center text-[#6B21A8] text-3xl font-extrabold mb-4'>caso queira saber mais sobre a avanti :</h1>
-                <iframe width="350" height="350" src="https://www.youtube.com/embed/J5Eik4jfHW0?si=B4zUlYobokSpbG3_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          {experiences.map((experience) => (
+            <div
+              key={experience.company}
+              className="border border-[#6B21A8] rounded-2xl p-5 bg-[#0b0b12] shadow-[0_0_30px_rgba(107,33,168,0.2)] space-y-4"
+            >
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <p className="text-sm text-gray-400">{experience.period}</p>
+                  <h3 className="text-xl font-bold text-[#c084fc] leading-tight">
+                    {experience.title}
+                  </h3>
+                  <p className="text-lg text-white">{experience.company}</p>
+                </div>
+                <span className="px-3 py-1 text-xs font-semibold rounded-full border border-[#6B21A8] text-[#6B21A8] bg-[#1a1625]">
+                  {experience.tag}
+                </span>
+              </div>
+
+              <ul className="list-disc list-inside text-sm text-gray-200 space-y-2">
+                {experience.highlights.map((highlight) => (
+                  <li key={highlight}>{highlight}</li>
+                ))}
+              </ul>
             </div>
-        
-        
+          ))}
         </div>
-          </>
-     );
+      </div>
+    </section>
+  );
 }
 
 export default Works;

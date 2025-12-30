@@ -4,6 +4,7 @@ import Tecnologies from "./components/Tecnologies"
 import EducacionTwo from "./components/TwoEducation"
 import Welcome from "./components/Welcome"
 import Works from "./components/Works"
+import Contact from "./components/Contact"
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
        <Works></Works>
        <Educacion></Educacion>
        <EducacionTwo></EducacionTwo>
+       <Contact></Contact>
     
     </div>
     
