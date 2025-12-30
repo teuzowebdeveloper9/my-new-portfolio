@@ -1,51 +1,39 @@
-# My New Portfolio
+# Portfolio — Mateus da Silva Oliveira
 
-This is my new portfolio, fully coded and designed by me. It represents a major milestone in my professional growth as a developer.
+Portfolio focado em IA aplicada, multiagentes e cloud-first, com destaque para a atuação na Lasy AI. Inclui downloads rápidos de currículo e carta de apresentação, além de collage de fotos na hero.
 
-## About the Project
+## Destaques
+- Hero com menção à Lasy AI, stack chips e CTA duplo (CV + carta).
+- Três fotos em collage (principal + 2 secundárias) na mesma estética.
+- Seções: Tecnologias, Projetos, Experiência (Lasy AI, High Scale, Infinity Force, Avanti), Educação (Jala University), CTA de contato por e-mail.
+- Downloads apontam para `public/mateus-dev-curriculo.pdf` e `public/Carta de Apresentação - Mateus da Silva Oliveira.pdf`.
 
-This portfolio took a lot of hard work to build, but the development process was very rewarding and allowed me to apply and improve my technical skills.
+## Trocar as fotos
+Substitua os placeholders mantendo os nomes:
+- `src/images/portrait-main.svg` → foto principal (use a terceira foto enviada).
+- `src/images/portrait-secondary.svg` → foto secundária (use a segunda foto enviada).
+- `src/images/teuzo.png` já é usada como uma das fotos secundárias no stack.
 
-### Key Features
+## Stack
+- React + Vite + Tailwind CSS
+- Lottie para animações
+- React Icons
 
-- **Responsive**: Designed to work smoothly on all screen sizes, providing a great experience on both mobile and desktop devices.
-- **Technologies Used**: Built with React and styled using Tailwind CSS.
-- **Hosting**: Available live on Vercel for easy access.
+## Rodar local
+```bash
+cd /home/teuzothedev/work/my-new-portfolio
+npm install
+npm run dev
+```
+App em `http://localhost:5173`.
 
-## Live Demo
+## Estrutura rápida
+- `src/App.jsx` — orquestra seções.
+- `src/components/Welcome.jsx` — hero, downloads e collage de fotos.
+- `src/components/Works.jsx` — experiências.
+- `src/components/Education.jsx` — Jala University.
+- `src/components/Projects.jsx`, `Tecnologies.jsx`, `TwoEducation.jsx`, `Contact.jsx`.
+- `public/` — PDFs (CV e carta).
 
-The project is hosted on Vercel. I hope you enjoy exploring it!
-
-https://my-new-portfolio-can1lkk9z-mateus-silvas-projects-2f8fdcdf.vercel.app/
-
-## Running Locally
-
-If you want to check out the source code or run the project locally, follow these steps:
-
-1. Clone the repository:
-   git clone [your-repository-url]
-
-plainText
-
-2. Navigate to the project folder:
-   cd [project-folder-name]
-
-plainText
-
-3. Install dependencies:
-   npm install
-
-plainText
-
-4. Start the development server:
-   npm start
-
-plainText
-
-5. Open your browser and go to `http://localhost:3000`
-
-## Feedback
-
-Feedback and suggestions are always welcome! Feel free to open an issue or contact me directly.
-
-Thank you for visiting my portfolio!
+## Contato
+`mateussoftwaredeveloper@gmail.com` — mande um e-mail para oportunidades ou dúvidas.***
