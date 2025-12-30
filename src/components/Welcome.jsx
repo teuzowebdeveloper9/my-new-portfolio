@@ -6,8 +6,8 @@ import { HiOutlineDownload } from "react-icons/hi";
 import { RiSparkling2Line } from "react-icons/ri";
 import { SiGooglecloud } from "react-icons/si";
 import teuzoDev from '../images/teuzo.png';
-import portraitMain from '../images/portrait-main.svg';
-import portraitSecondary from '../images/portrait-secondary.svg';
+import portraitMain from '../images/portrait-main.png';
+import portraitSecondary from '../images/portrait-secondary.png';
 
 function Welcome() {
   const downloadFile = (path, fileName) => {
