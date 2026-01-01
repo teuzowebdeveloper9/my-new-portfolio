@@ -1,39 +1,50 @@
-# Portfolio — Mateus da Silva Oliveira
+# Mateus da Silva Oliveira — Currículo (Portfolio Repo)
 
-Portfolio focado em IA aplicada, multiagentes e cloud-first, com destaque para a atuação na Lasy AI. Inclui downloads rápidos de currículo e carta de apresentação, além de collage de fotos na hero.
+**Full Stack / IA Engineer | Cloud & DevOps**  
+mateussoftwaredeveloper@gmail.com · Remoto — BR  
+GitHub: `teuzowebdeveloper9` · Portfolio: este repositório
 
-## Destaques
-- Hero com menção à Lasy AI, stack chips e CTA duplo (CV + carta).
-- Três fotos em collage (principal + 2 secundárias) na mesma estética.
-- Seções: Tecnologias, Projetos, Experiência (Lasy AI, High Scale, Infinity Force, Avanti), Educação (Jala University), CTA de contato por e-mail.
-- Downloads apontam para `public/mateus-dev-curriculo.pdf` e `public/Carta de Apresentação - Mateus da Silva Oliveira.pdf`.
+## Sobre
+Construo produtos de ponta a ponta com IA aplicada, fluxos multiagentes e RAG, integrando LLMs (GPT/Claude/Mistral) a bases vetoriais e pipelines de streaming. Foco em performance, segurança e cloud-first (Docker, CI/CD, GCP). Experiência sólida em arquiteturas escaláveis, SSR/SSG e APIs de alta performance.
 
-## Trocar as fotos
-Substitua os placeholders mantendo os nomes:
-- `src/images/portrait-main.svg` → foto principal (use a terceira foto enviada).
-- `src/images/portrait-secondary.svg` → foto secundária (use a segunda foto enviada).
-- `src/images/teuzo.png` já é usada como uma das fotos secundárias no stack.
+## Skills
+- **Frontend:** React, Next.js (SSR/SSG), TypeScript, JavaScript  
+- **Back-end & APIs:** NestJS, Express, Fastify, Spring Boot, Node.js, .NET/C#  
+- **IA, Dados & RAG:** Vetores, embeddings, multiagentes; PostgreSQL, MongoDB, MySQL, Supabase; Prisma; Redis (cache)  
+- **Cloud & DevOps:** Docker, CI/CD, GCP, Kubernetes (exposição/consumo), Cloudflare Workers, S3  
+- **Testes & Qualidade:** Jest, JUnit, arquitetura limpa, observabilidade  
+- **Web3 (experiência prévia):** Ethereum/Solana, ethers.js, wagmi, RainbowKit  
 
-## Stack
-- React + Vite + Tailwind CSS
-- Lottie para animações
-- React Icons
+## Experiência
+- **Lasy AI — Full Stack / IA Engineer (out/2025 – atual)**  
+  Multiagentes, pipelines de streaming, wrappers estilo Bolt/Lovable; ferramentas custom com vetores e RAG; Docker + CI/CD + Supabase.
+- **High Scale — Desenvolvedor Full Stack Pleno (ago/2025 – atual)**  
+  Soluções B2B escaláveis em .NET/TypeScript/GCP; SLAs, segurança, observabilidade e hardening de serviços.
+- **Infinity Force — Desenvolvedor Full Stack (jun/2025 – ago/2025)**  
+  Web3 (Ethereum/Solana) com NestJS, PostgreSQL/MongoDB; integrações de carteiras; DevSecOps com Docker.
+- **Avanti — Desenvolvedor Full Stack (abr/2024 – mai/2025)**  
+  E-commerces de alta performance com React, Node.js, MongoDB; SSR, SEO e compatibilidade cross-browser.
+
+## Projetos
+- **Portal IFCE (SSR + Cache + Escala):** Next.js, Node.js, MongoDB, Redis; ganho de escala 300%, páginas <1s, 3k+ usuários simultâneos.  
+- **Rescisão Fácil (API + UX + Monetização):** Node.js, MongoDB, Vue.js; 8k+ acessos/mês, cálculos legais automatizados, monetização via AdSense.  
+- **Egoth (SaaS):** React, Node.js, Stripe; recomendações por árvore, rotas privadas, pagamentos seguros.
+
+## Educação
+- **Engenharia de Software — Jala University (Talentos, bolsa integral Jalasoft)** — em andamento
+
+## Arquivos úteis neste repo
+- `public/mateus-dev-curriculo.pdf` — CV detalhado  
+- `public/Carta de Apresentação - Mateus da Silva Oliveira.pdf` — carta de apresentação  
+- Código do portfólio: hero com downloads rápidos (CV e carta), collage de fotos, seções de skills, projetos, experiência e contato.
 
 ## Rodar local
 ```bash
 cd /home/teuzothedev/work/my-new-portfolio
 npm install
 npm run dev
+# http://localhost:5173
 ```
-App em `http://localhost:5173`.
-
-## Estrutura rápida
-- `src/App.jsx` — orquestra seções.
-- `src/components/Welcome.jsx` — hero, downloads e collage de fotos.
-- `src/components/Works.jsx` — experiências.
-- `src/components/Education.jsx` — Jala University.
-- `src/components/Projects.jsx`, `Tecnologies.jsx`, `TwoEducation.jsx`, `Contact.jsx`.
-- `public/` — PDFs (CV e carta).
 
 ## Contato
-`mateussoftwaredeveloper@gmail.com` — mande um e-mail para oportunidades ou dúvidas.***
+`mateussoftwaredeveloper@gmail.com` — disponível para oportunidades remotas.***
