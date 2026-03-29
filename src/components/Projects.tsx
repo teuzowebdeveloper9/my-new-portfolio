@@ -1,82 +1,101 @@
 import { useState } from "react";
 import { FaArrowUpRightFromSquare, FaGithub } from "react-icons/fa6";
 
-function Projects() {
-  const [activeTab, setActiveTab] = useState("featured");
+type Project = {
+  title: string;
+  tag: string;
+  stack: string;
+  impact: string;
+  bullets: string[];
+  primaryUrl: string;
+  primaryLabel: string;
+  secondaryUrl: string | null;
+  secondaryLabel: string | null;
+};
 
-  const tabs = [
-    { id: "featured", label: "Case principal" },
-    { id: "public", label: "Projetos públicos" },
-  ];
+type TabId = "featured" | "public";
 
-  const featuredProject = {
-    title: "anotEX.ai",
-    tag: "IA aplicada em produção",
-    stack:
-      "NestJS, React 19, TypeScript, Supabase, Cloudflare R2, BullMQ, Upstash Redis, Groq, Railway",
+type Tab = {
+  id: TabId;
+  label: string;
+};
+
+const tabs: Tab[] = [
+  { id: "featured", label: "Case principal" },
+  { id: "public", label: "Projetos públicos" },
+];
+
+const featuredProject: Project = {
+  title: "anotEX.ai",
+  tag: "IA aplicada em produção",
+  stack:
+    "NestJS, React 19, TypeScript, Supabase, Cloudflare R2, BullMQ, Upstash Redis, Groq, Railway",
+  impact:
+    "Plataforma que transforma aulas em resumo, flashcards, mapa mental, quiz e chat com RAG.",
+  bullets: [
+    "Processa gravações, uploads e links do YouTube para gerar materiais de estudo automaticamente.",
+    "Arquitetura com backend em Clean Architecture e frontend em Feature-Sliced Design.",
+    "Pipeline assíncrono com fila para transcrição, geração de materiais, revisão espaçada e chat contextual.",
+  ],
+  primaryUrl: "https://anoteexai.tight-resonance-42ff.workers.dev/",
+  primaryLabel: "Abrir plataforma",
+  secondaryUrl: null,
+  secondaryLabel: null,
+};
+
+const publicProjects: Project[] = [
+  {
+    title: "API sem Framework",
+    tag: "Arquitetura backend",
+    stack: "Node.js, TypeScript, módulos nativos",
     impact:
-      "Plataforma que transforma aulas em resumo, flashcards, mapa mental, quiz e chat com RAG.",
+      "API REST construída sem framework externo para demonstrar domínio de HTTP, organização em camadas e tipagem forte.",
     bullets: [
-      "Processa gravações, uploads e links do YouTube para gerar materiais de estudo automaticamente.",
-      "Arquitetura com backend em Clean Architecture e frontend em Feature-Sliced Design.",
-      "Pipeline assíncrono com fila para transcrição, geração de materiais, revisão espaçada e chat contextual.",
+      "Separação clara entre controladores, serviços, repositórios e utilitários.",
+      "Enums para padronizar status HTTP e respostas JSON consistentes.",
+      "Projeto forte para mostrar base de backend sem abstrações pesadas.",
     ],
-    primaryUrl: "https://anoteexai.tight-resonance-42ff.workers.dev/",
-    primaryLabel: "Abrir plataforma",
+    primaryUrl: "https://github.com/teuzowebdeveloper9/api-sem-framework",
+    primaryLabel: "Ver repositório",
     secondaryUrl: null,
     secondaryLabel: null,
-  };
+  },
+  {
+    title: "Wallet with Mongo",
+    tag: "Backend com auth",
+    stack: "Node.js, Express, MongoDB, JWT",
+    impact:
+      "Backend de carteira digital com autenticação, saldo e movimentações, pensado para futura integração com frontend.",
+    bullets: [
+      "Rotas RESTful para cadastro, login, carteira e transações.",
+      "Proteção via JWT e foco em integridade dos dados financeiros.",
+      "Mostra modelagem de negócio, segurança e organização de API.",
+    ],
+    primaryUrl: "https://github.com/teuzowebdeveloper9/wallet-with-mongo",
+    primaryLabel: "Ver repositório",
+    secondaryUrl: null,
+    secondaryLabel: null,
+  },
+  {
+    title: "Teuzo-Web CRUD",
+    tag: "Full stack com deploy",
+    stack: "Frontend + backend CRUD com publicação em produção",
+    impact:
+      "Aplicação para cadastro e gerenciamento de alunos, com narrativa própria, fluxo completo e demonstração online.",
+    bullets: [
+      "Entrega fluxo de criação, listagem e remoção em uma interface pública navegável.",
+      "Projeto simples, mas útil para demonstrar produto funcionando de ponta a ponta.",
+      "Tem repositório público e demo publicada, o que ajuda muito em avaliação técnica.",
+    ],
+    primaryUrl: "https://crud-ueed.vercel.app/",
+    primaryLabel: "Ver demo",
+    secondaryUrl: "https://github.com/teuzowebdeveloper9/crud",
+    secondaryLabel: "Ver código",
+  },
+];
 
-  const publicProjects = [
-    {
-      title: "API sem Framework",
-      tag: "Arquitetura backend",
-      stack: "Node.js, TypeScript, módulos nativos",
-      impact:
-        "API REST construída sem framework externo para demonstrar domínio de HTTP, organização em camadas e tipagem forte.",
-      bullets: [
-        "Separação clara entre controladores, serviços, repositórios e utilitários.",
-        "Enums para padronizar status HTTP e respostas JSON consistentes.",
-        "Projeto forte para mostrar base de backend sem abstrações pesadas.",
-      ],
-      primaryUrl: "https://github.com/teuzowebdeveloper9/api-sem-framework",
-      primaryLabel: "Ver repositório",
-      secondaryUrl: null,
-      secondaryLabel: null,
-    },
-    {
-      title: "Wallet with Mongo",
-      tag: "Backend com auth",
-      stack: "Node.js, Express, MongoDB, JWT",
-      impact:
-        "Backend de carteira digital com autenticação, saldo e movimentações, pensado para futura integração com frontend.",
-      bullets: [
-        "Rotas RESTful para cadastro, login, carteira e transações.",
-        "Proteção via JWT e foco em integridade dos dados financeiros.",
-        "Mostra modelagem de negócio, segurança e organização de API.",
-      ],
-      primaryUrl: "https://github.com/teuzowebdeveloper9/wallet-with-mongo",
-      primaryLabel: "Ver repositório",
-      secondaryUrl: null,
-      secondaryLabel: null,
-    },
-    {
-      title: "Teuzo-Web CRUD",
-      tag: "Full stack com deploy",
-      stack: "Frontend + backend CRUD com publicação em produção",
-      impact:
-        "Aplicação para cadastro e gerenciamento de alunos, com narrativa própria, fluxo completo e demonstração online.",
-      bullets: [
-        "Entrega fluxo de criação, listagem e remoção em uma interface pública navegável.",
-        "Projeto simples, mas útil para demonstrar produto funcionando de ponta a ponta.",
-        "Tem repositório público e demo publicada, o que ajuda muito em avaliação técnica.",
-      ],
-      primaryUrl: "https://crud-ueed.vercel.app/",
-      primaryLabel: "Ver demo",
-      secondaryUrl: "https://github.com/teuzowebdeveloper9/crud",
-      secondaryLabel: "Ver código",
-    },
-  ];
+function Projects(): JSX.Element {
+  const [activeTab, setActiveTab] = useState<TabId>("featured");
 
   const visibleProjects =
     activeTab === "featured" ? [featuredProject] : publicProjects;

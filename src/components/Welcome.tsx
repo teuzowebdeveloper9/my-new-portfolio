@@ -1,40 +1,56 @@
-import animationHello from '../animations/Animation - 1749818775025.json';
-import Lottie from 'lottie-react';
-import { TbFileCv } from "react-icons/tb";
+import Lottie from "lottie-react";
 import { FaGithub } from "react-icons/fa";
 import { HiOutlineDownload } from "react-icons/hi";
 import { RiSparkling2Line } from "react-icons/ri";
 import { SiGooglecloud } from "react-icons/si";
-import teuzoDev from '../images/teuzo.png';
-import portraitMain from '../images/portrait-main.png';
-import portraitSecondary from '../images/portrait-secondary.png';
+import { TbFileCv } from "react-icons/tb";
+import animationHello from "../animations/Animation - 1749818775025.json";
+import portraitMain from "../images/portrait-main.png";
+import portraitSecondary from "../images/portrait-secondary.png";
+import teuzoDev from "../images/teuzo.png";
 import HeroGlow from "./HeroGlow";
 
-function Welcome() {
-  const downloadFile = (path, fileName) => {
-    const link = document.createElement("a");
-    link.href = encodeURI(path);
-    link.download = fileName;
-    link.click();
+type Photo = {
+  src: string;
+  alt: string;
+};
+
+const photoStack: Photo[] = [
+  { src: portraitMain, alt: "Foto principal do Mateus" },
+  { src: teuzoDev, alt: "Retrato do Mateus" },
+  { src: portraitSecondary, alt: "Foto complementar do Mateus" },
+];
+
+const badges = [
+  "Full Stack | IA Engineer",
+  "React / Next.js / NestJS",
+  "Java / Spring Boot",
+  "RAG · Vetores · Multiagentes",
+  "GCP · Docker · CI/CD",
+] as const;
+
+function downloadFile(path: string, fileName: string): void {
+  const link = document.createElement("a");
+  link.href = encodeURI(path);
+  link.download = fileName;
+  link.click();
+}
+
+function Welcome(): JSX.Element {
+  const handleCvDownload = (): void => {
+    downloadFile("/mateus-dev-curriculo.pdf", "mateus-dev-curriculo.pdf");
   };
 
-  const handleCvDownload = () => downloadFile("/mateus-dev-curriculo.pdf", "mateus-dev-curriculo.pdf");
-  const handleCoverLetterDownload = () =>
-    downloadFile("/Carta de Apresentação - Mateus da Silva Oliveira.pdf", "Carta de Apresentação - Mateus da Silva Oliveira.pdf");
+  const handleCoverLetterDownload = (): void => {
+    downloadFile(
+      "/Carta de Apresentação - Mateus da Silva Oliveira.pdf",
+      "Carta de Apresentação - Mateus da Silva Oliveira.pdf",
+    );
+  };
 
-  const photoStack = [
-    { src: portraitMain, alt: "Foto principal do Mateus" },
-    { src: teuzoDev, alt: "Retrato do Mateus" },
-    { src: portraitSecondary, alt: "Foto complementar do Mateus" },
-  ];
-
-  const badges = [
-    "Full Stack | IA Engineer",
-    "React / Next.js / NestJS",
-    "Java / Spring Boot",
-    "RAG · Vetores · Multiagentes",
-    "GCP · Docker · CI/CD",
-  ];
+  const handleGithubOpen = (): void => {
+    window.open("https://github.com/teuzowebdeveloper9", "_blank", "noreferrer");
+  };
 
   return (
     <div className="relative w-full mx-auto min-h-screen border-b-4 border-[#6B21A8] bg-[#0D0D0D] mb-10 flex flex-col items-center px-4 py-10 overflow-hidden">
@@ -50,19 +66,27 @@ function Welcome() {
             <h1 className="text-3xl md:text-4xl font-extrabold leading-tight">
               Mateus da Silva Oliveira
             </h1>
-            <Lottie className="h-[80px] md:h-[110px]" animationData={animationHello} loop={true} />
+            <Lottie
+              className="h-[80px] md:h-[110px]"
+              animationData={animationHello}
+              loop
+            />
           </div>
 
           <p className="text-base md:text-lg text-gray-200 leading-relaxed">
-            Construo produtos de ponta a ponta com foco em IA aplicada, performance e cloud-first.
-            Hoje na Lasy AI, lidero fluxos multiagentes e pipelines de streaming, integrando GPT/Claude/Mistral
-            com bases vetoriais e automações robustas. Experiência sólida em arquiteturas escaláveis,
-            SSR, segurança e entregas contínuas.
+            Construo produtos de ponta a ponta com foco em IA aplicada,
+            performance e cloud-first. Hoje na Lasy AI, lidero fluxos
+            multiagentes e pipelines de streaming, integrando GPT/Claude/Mistral
+            com bases vetoriais e automações robustas. Experiência sólida em
+            arquiteturas escaláveis, SSR, segurança e entregas contínuas.
           </p>
 
           <div className="flex flex-wrap gap-2">
             {badges.map((badge) => (
-              <span key={badge} className="px-3 py-1 rounded-full border border-[#6B21A8] text-xs md:text-sm text-[#c084fc] bg-[#1a1625]">
+              <span
+                key={badge}
+                className="px-3 py-1 rounded-full border border-[#6B21A8] text-xs md:text-sm text-[#c084fc] bg-[#1a1625]"
+              >
                 {badge}
               </span>
             ))}
@@ -70,19 +94,23 @@ function Welcome() {
 
           <div className="flex flex-wrap gap-3">
             <button
+              type="button"
               onClick={handleCvDownload}
               className="bg-[#6B21A8] hover:bg-transparent hover:text-[#6B21A8] border-2 border-[#6B21A8] h-[50px] px-4 gap-2 flex items-center justify-center text-[#0D0D0D] font-extrabold rounded transition-colors"
             >
               Baixar CV <TbFileCv className="text-2xl" />
             </button>
             <button
+              type="button"
               onClick={handleCoverLetterDownload}
               className="bg-transparent border-2 border-[#6B21A8] text-[#6B21A8] hover:bg-[#6B21A8] hover:text-[#0D0D0D] h-[50px] px-4 gap-2 flex items-center justify-center font-extrabold rounded transition-colors"
             >
-              Carta de apresentação <HiOutlineDownload className="text-xl" />
+              Carta de apresentação{" "}
+              <HiOutlineDownload className="text-xl" />
             </button>
             <button
-              onClick={() => window.open('https://github.com/teuzowebdeveloper9')}
+              type="button"
+              onClick={handleGithubOpen}
               className="bg-[#0D0D0D] border-2 border-[#6B21A8] hover:bg-[#6B21A8] hover:text-[#0D0D0D] h-[50px] px-4 gap-2 flex items-center justify-center text-[#6B21A8] font-extrabold rounded transition-colors"
             >
               GitHub <FaGithub className="text-2xl" />
@@ -115,8 +143,10 @@ function Welcome() {
               <span>Cloud & IA em produção</span>
             </div>
             <p className="text-sm leading-relaxed">
-              Pipelines de streaming, RAG com bases vetoriais, agentes autônomos e observabilidade são o meu dia a dia.
-              Escalo com Docker, CI/CD e GCP, mantendo segurança, governança e tempo de resposta baixos.
+              Pipelines de streaming, RAG com bases vetoriais, agentes
+              autônomos e observabilidade são o meu dia a dia. Escalo com
+              Docker, CI/CD e GCP, mantendo segurança, governança e tempo de
+              resposta baixos.
             </p>
           </div>
         </div>
