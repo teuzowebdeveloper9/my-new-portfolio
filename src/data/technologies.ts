@@ -28,12 +28,14 @@ export type TechnologyItem = {
 
 export type TechnologyCategory = {
   title: string;
+  description: string;
   items: TechnologyItem[];
 };
 
 export const technologyCategories: TechnologyCategory[] = [
   {
     title: "Frontend",
+    description: "Interfaces responsivas, performaticas e com cuidado de produto.",
     items: [
       { icon: FaReact, label: "React" },
       { icon: SiNextdotjs, label: "Next.js / SSR" },
@@ -43,6 +45,7 @@ export const technologyCategories: TechnologyCategory[] = [
   },
   {
     title: "Back-end & APIs",
+    description: "Servicos tipados, modulares e prontos para integracoes reais.",
     items: [
       { icon: SiNestjs, label: "NestJS" },
       { icon: FaNodeJs, label: "Node.js" },
@@ -53,6 +56,7 @@ export const technologyCategories: TechnologyCategory[] = [
   },
   {
     title: "IA, Agentes & Dados",
+    description: "LLMs, bancos relacionais, cache e dados para experiencias inteligentes.",
     items: [
       { icon: SiOpenai, label: "GPT / Claude / Mistral" },
       { icon: BiLogoPostgresql, label: "PostgreSQL" },
@@ -65,6 +69,7 @@ export const technologyCategories: TechnologyCategory[] = [
   },
   {
     title: "Cloud, DevOps & Qualidade",
+    description: "Deploy, observabilidade e testes para manter produto em pe.",
     items: [
       { icon: FaDocker, label: "Docker" },
       { icon: SiGooglecloud, label: "GCP" },

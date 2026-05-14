@@ -1,5 +1,6 @@
 import Lottie from "lottie-react";
 import { FaGithub } from "react-icons/fa";
+import { FaArrowDown, FaLocationDot } from "react-icons/fa6";
 import { HiOutlineDownload } from "react-icons/hi";
 import { RiSparkling2Line } from "react-icons/ri";
 import { SiGooglecloud } from "react-icons/si";
@@ -22,6 +23,18 @@ const photoStack: Photo[] = [
   { src: portraitSecondary, alt: "Foto complementar do Mateus" },
 ];
 
+const heroStats = [
+  { label: "Especialidade", value: "AI Products" },
+  { label: "Stack", value: "React + Nest" },
+  { label: "Entrega", value: "Deploy-ready" },
+] as const;
+
+const signalCards = [
+  "RAG, agentes e automacoes",
+  "APIs, filas e observabilidade",
+  "Interfaces com personalidade",
+] as const;
+
 function downloadFile(path: string, fileName: string): void {
   const link = document.createElement("a");
   link.href = encodeURI(path);
@@ -31,7 +44,10 @@ function downloadFile(path: string, fileName: string): void {
 
 function Welcome(): JSX.Element {
   const handleCvDownload = (): void => {
-    downloadFile("/mateus-dev-curriculo.pdf", "mateus-dev-curriculo.pdf");
+    downloadFile(
+      "/mateus-dev-curriculo.pdf",
+      "Mateus da Silva Oliveira - Curriculo.pdf",
+    );
   };
 
   const handleCoverLetterDownload = (): void => {
@@ -46,27 +62,41 @@ function Welcome(): JSX.Element {
   };
 
   return (
-    <section className="relative mx-auto flex min-h-screen w-full flex-col items-center overflow-hidden border-b border-white/10 bg-[#07070b] px-4 py-10">
+    <section
+      id="home"
+      className="relative mx-auto flex min-h-screen w-full flex-col items-center justify-center overflow-hidden border-b border-white/10 bg-[#07070b] px-4 py-12"
+    >
       <HeroGlow />
-      <div className="grid w-full max-w-6xl grid-cols-1 items-center gap-10 lg:grid-cols-2">
-        <div className="space-y-5">
-          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-300/25 bg-cyan-300/10 px-4 py-2 text-cyan-100">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,#22d3ee,#d7ff4d,transparent)]" />
+
+      <div className="grid w-full max-w-6xl grid-cols-1 items-center gap-10 lg:grid-cols-[1.02fr_0.98fr]">
+        <div className="space-y-6">
+          <div className="inline-flex items-center gap-2 border border-cyan-300/25 bg-cyan-300/10 px-4 py-2 text-cyan-100">
             <RiSparkling2Line className="text-xl" />
-            <span>Lasy AI — Full Stack / AI Engineer</span>
+            <span>Lasy AI / Full Stack / AI Engineer</span>
           </div>
 
-          <div className="flex items-center gap-3 text-purple-200">
-            <h1 className="text-4xl font-black leading-tight tracking-tight text-white md:text-6xl">
+          <div className="space-y-3 text-purple-200">
+            <p className="flex flex-wrap items-center gap-2 text-sm font-semibold text-slate-400">
+              <FaLocationDot className="text-[#d7ff4d]" />
+              {profile.location}
+            </p>
+            <h1 className="text-4xl font-black leading-[0.98] text-white md:text-6xl">
               {profile.name}
             </h1>
-            <Lottie
-              className="h-[78px] md:h-[110px]"
-              animationData={animationHello}
-              loop
-            />
+            <div className="flex items-center gap-3">
+              <p className="max-w-xl text-2xl font-black text-[#d7ff4d] md:text-3xl">
+                Full stack AI engineer para produto, cloud e interfaces com atmosfera.
+              </p>
+              <Lottie
+                className="hidden h-[86px] shrink-0 md:block"
+                animationData={animationHello}
+                loop
+              />
+            </div>
           </div>
 
-          <p className="text-lg leading-relaxed text-slate-200 md:text-xl">
+          <p className="max-w-2xl text-lg leading-relaxed text-slate-200 md:text-xl">
             {profile.summary}
           </p>
 
@@ -74,10 +104,22 @@ function Welcome(): JSX.Element {
             {profile.focusAreas.map((badge) => (
               <span
                 key={badge}
-                className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-slate-200 md:text-sm"
+                className="border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-slate-200 md:text-sm"
               >
                 {badge}
               </span>
+            ))}
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-3">
+            {heroStats.map((stat) => (
+              <div
+                key={stat.label}
+                className="border border-white/10 bg-black/30 p-4 backdrop-blur-md"
+              >
+                <p className="text-xs font-semibold uppercase text-slate-500">{stat.label}</p>
+                <p className="mt-1 text-lg font-black text-white">{stat.value}</p>
+              </div>
             ))}
           </div>
 
@@ -85,14 +127,14 @@ function Welcome(): JSX.Element {
             <button
               type="button"
               onClick={handleCvDownload}
-              className="flex h-[50px] items-center justify-center gap-2 rounded-xl border border-cyan-300 bg-cyan-300 px-4 font-extrabold text-slate-950 transition hover:-translate-y-0.5 hover:bg-transparent hover:text-cyan-100"
+              className="flex h-[50px] items-center justify-center gap-2 rounded-md border border-cyan-300 bg-cyan-300 px-4 font-extrabold text-slate-950 transition hover:-translate-y-0.5 hover:bg-transparent hover:text-cyan-100"
             >
               Baixar CV <TbFileCv className="text-2xl" />
             </button>
             <button
               type="button"
               onClick={handleCoverLetterDownload}
-              className="flex h-[50px] items-center justify-center gap-2 rounded-xl border border-purple-300/40 bg-purple-300/10 px-4 font-extrabold text-purple-100 transition hover:-translate-y-0.5 hover:bg-purple-300 hover:text-slate-950"
+              className="flex h-[50px] items-center justify-center gap-2 rounded-md border border-purple-300/40 bg-purple-300/10 px-4 font-extrabold text-purple-100 transition hover:-translate-y-0.5 hover:bg-purple-300 hover:text-slate-950"
             >
               Carta de apresentação{" "}
               <HiOutlineDownload className="text-xl" />
@@ -100,33 +142,55 @@ function Welcome(): JSX.Element {
             <button
               type="button"
               onClick={handleGithubOpen}
-              className="flex h-[50px] items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 font-extrabold text-slate-200 transition hover:-translate-y-0.5 hover:border-cyan-300/40 hover:text-cyan-100"
+              className="flex h-[50px] items-center justify-center gap-2 rounded-md border border-white/10 bg-white/[0.03] px-4 font-extrabold text-slate-200 transition hover:-translate-y-0.5 hover:border-cyan-300/40 hover:text-cyan-100"
             >
               GitHub <FaGithub className="text-2xl" />
             </button>
+            <a
+              href="#projects"
+              className="flex h-[50px] items-center justify-center gap-2 rounded-md border border-[#d7ff4d]/45 bg-[#d7ff4d]/10 px-4 font-extrabold text-[#d7ff4d] transition hover:-translate-y-0.5 hover:bg-[#d7ff4d] hover:text-black"
+            >
+              Ver cases <FaArrowDown />
+            </a>
           </div>
         </div>
 
         <div className="relative w-full max-w-lg mx-auto">
-          <div className="relative h-[420px]">
+          <div className="relative h-[460px] border border-white/10 bg-black/25 p-4 shadow-[0_28px_90px_rgba(0,0,0,0.42)] backdrop-blur-md">
+            <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-white/10 to-transparent" />
+            <div className="absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,#22d3ee,#d7ff4d,#ff4d8d)]" />
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-full overflow-hidden opacity-20">
+              <div className="animate-scanline h-1/2 bg-gradient-to-b from-transparent via-cyan-200/30 to-transparent" />
+            </div>
             <img
               src={photoStack[0].src}
               alt={photoStack[0].alt}
-              className="absolute inset-0 m-auto h-[320px] w-[320px] rounded-3xl border border-cyan-300/30 object-cover shadow-[0_0_80px_rgba(34,211,238,0.22)]"
+              className="absolute inset-0 m-auto h-[320px] w-[320px] border border-cyan-300/30 object-cover shadow-[0_0_80px_rgba(34,211,238,0.22)]"
             />
             <img
               src={photoStack[1].src}
               alt={photoStack[1].alt}
-              className="absolute -left-4 -top-6 h-[140px] w-[140px] animate-float rounded-2xl border border-white/25 object-cover shadow-lg"
+              className="absolute -left-2 top-7 h-[144px] w-[144px] animate-float border border-white/25 object-cover shadow-lg"
             />
             <img
               src={photoStack[2].src}
               alt={photoStack[2].alt}
-              className="absolute -bottom-6 -right-4 h-[140px] w-[140px] animate-float rounded-2xl border border-white/25 object-cover shadow-lg"
+              className="absolute bottom-6 -right-2 h-[144px] w-[144px] animate-float border border-white/25 object-cover shadow-lg"
             />
+
+            <div className="absolute bottom-4 left-4 right-4 grid gap-2 sm:grid-cols-3">
+              {signalCards.map((signal) => (
+                <div
+                  key={signal}
+                  className="border border-white/10 bg-black/55 px-3 py-2 text-xs font-semibold text-slate-200 backdrop-blur-md"
+                >
+                  {signal}
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="mt-6 space-y-2 rounded-3xl border border-white/10 bg-white/[0.035] p-4 text-slate-200">
+          <div className="mt-4 space-y-2 border border-white/10 bg-white/[0.035] p-4 text-slate-200">
             <div className="flex items-center gap-2 font-semibold text-cyan-100">
               <SiGooglecloud />
               <span>Cloud & IA em produção</span>

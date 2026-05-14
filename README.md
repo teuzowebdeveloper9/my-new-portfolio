@@ -35,6 +35,20 @@ public/
   projects/            # videos e assets publicos de projetos
 ```
 
+## Experiencia e Agentes
+
+O portfolio agora possui uma camada de experiencia global com aura de cursor,
+barra de progresso, navegacao por secoes e uma secao dedicada ao workflow com
+agentes de codigo.
+
+Agentes destacados:
+
+- Claude Code, para leitura profunda, refatoracao, arquitetura e docs;
+- Codex, para implementacao, validacao, revisao de diff e entrega;
+- Cursor Agent e Antigravity como apoio para iteracoes e experimentos.
+
+Consulte `CLAUDE.md` e `AGENTS.md` antes de usar agentes neste repo.
+
 ## Case Carti Visual Archive
 
 O portfolio inclui o projeto Carti Visual Archive, um site de fa em homenagem ao Playboi Carti:

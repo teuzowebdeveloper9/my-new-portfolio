@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+:root {
+  --cursor-x: 50vw;
+  --cursor-y: 42vh;
+}
+
 html {
   background: #07070b;
   scroll-behavior: smooth;
@@ -9,15 +14,43 @@ body {
   margin: 0;
   min-width: 320px;
   background:
-    radial-gradient(circle at 18% 0%, rgba(124, 58, 237, 0.16), transparent 28rem),
-    radial-gradient(circle at 84% 8%, rgba(34, 211, 238, 0.12), transparent 26rem),
+    radial-gradient(circle at 18% 0%, rgba(255, 77, 141, 0.1), transparent 26rem),
+    radial-gradient(circle at 84% 8%, rgba(34, 211, 238, 0.12), transparent 24rem),
+    radial-gradient(circle at 50% 100%, rgba(215, 255, 77, 0.06), transparent 22rem),
     #07070b;
   -webkit-font-smoothing: antialiased;
   text-rendering: geometricPrecision;
 }
 
+body::selection {
+  background: rgba(215, 255, 77, 0.88);
+  color: #07070b;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.portfolio-cursor-aura {
+  position: fixed;
+  inset: 0;
+  z-index: 15;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      360px circle at var(--cursor-x) var(--cursor-y),
+      rgba(34, 211, 238, 0.16),
+      rgba(255, 77, 141, 0.08) 34%,
+      transparent 68%
+    );
+  mix-blend-mode: screen;
+  opacity: 0.8;
+}
+
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -27,4 +60,32 @@ body {
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.animate-scanline {
+  animation: scanline 5s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .portfolio-cursor-aura {
+    display: none;
+  }
 }
