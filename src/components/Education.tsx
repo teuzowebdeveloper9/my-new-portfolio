@@ -1,6 +1,7 @@
 import jalabig from "../images/JALABIG.webp";
 import jalaone from "../images/jalaone.jpg";
 import jalatwo from "../images/jalatwo.jpg";
+import SectionHeading from "./ui/SectionHeading";
 
 const highlights = [
   "Bolsa integral de 4 anos (Jalasoft) — Talentos 2025.",
@@ -11,59 +12,58 @@ const highlights = [
 
 function Education(): JSX.Element {
   return (
-    <div className="w-full mx-auto border-b-4 border-[#6B21A8] bg-[#0D0D0D] mb-10 px-4 py-10">
-      <div className="max-w-6xl mx-auto space-y-8">
-        <div className="text-center space-y-2">
-          <h1 className="flex justify-center items-center text-[#6B21A8] text-3xl font-extrabold">
-            Trajetória Universitária
-          </h1>
-          <p className="text-gray-200">
-            Jala University me dá base sólida de engenharia de software,
-            unindo prática intensa, fundamentos fortes e visão global.
-          </p>
-        </div>
+    <section className="mx-auto w-full border-b border-white/10 bg-[#09090d] px-4 py-20">
+      <div className="mx-auto max-w-6xl space-y-10">
+        <SectionHeading
+          eyebrow="education"
+          title="Base academica forte para engenharia de software real."
+          description="Jala University une pratica intensa, fundamentos de engenharia e visao global, com bolsa integral de quatro anos patrocinada pela Jalasoft."
+        />
 
-        <div className="flex flex-col lg:flex-row items-center gap-8 p-6">
-          <div className="relative w-full lg:w-1/2 h-[400px] flex justify-center items-center">
+        <div className="flex flex-col items-center gap-8 rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 lg:flex-row">
+          <div className="relative flex h-[400px] w-full items-center justify-center lg:w-1/2">
             <img
               src={jalabig}
               alt="Jala University"
-              className="rounded-2xl animate-float w-[300px] h-[300px] object-cover shadow-[0_0_40px_rgba(107,33,168,0.35)]"
+              className="h-[300px] w-[300px] animate-float rounded-3xl border border-cyan-300/20 object-cover shadow-[0_0_70px_rgba(34,211,238,0.18)]"
             />
 
             <img
               src={jalaone}
               alt="Campus Jala University"
-              className="absolute top-[-20px] animate-float left-[30px] w-[120px] h-[120px] rounded-xl object-cover border-4 border-white shadow-md"
+              className="absolute top-[-20px] left-[30px] h-[120px] w-[120px] animate-float rounded-2xl border border-white/25 object-cover shadow-md"
             />
 
             <img
               src={jalatwo}
               alt="Equipe Jala University"
-              className="absolute bottom-[-20px] animate-float right-[30px] w-[120px] h-[120px] rounded-xl object-cover border-4 border-white shadow-md"
+              className="absolute bottom-[-20px] right-[30px] h-[120px] w-[120px] animate-float rounded-2xl border border-white/25 object-cover shadow-md"
             />
           </div>
 
-          <div className="w-full lg:w-1/2 text-white space-y-5">
-            <h2 className="text-2xl font-bold text-[#c084fc]">
+          <div className="w-full space-y-5 text-white lg:w-1/2">
+            <h2 className="text-2xl font-black text-cyan-100">
               Sou um jovem talento na Jala University
             </h2>
-            <p className="text-gray-300 leading-relaxed">
+            <p className="leading-relaxed text-slate-300">
               Engenharia de Software com grade prática, alinhada ao mercado
               global. Aprovado em programa altamente concorrido, com bolsa
               integral de quatro anos patrocinada pela Jalasoft.
             </p>
-            <ul className="list-disc list-inside space-y-2 text-gray-200 text-sm">
+            <ul className="grid gap-2 text-sm text-slate-200">
               {highlights.map((item) => (
-                <li key={item}>{item}</li>
+                <li key={item} className="flex gap-2">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" />
+                  <span>{item}</span>
+                </li>
               ))}
             </ul>
           </div>
         </div>
 
         <div className="flex flex-col items-center justify-center">
-          <div className="border-4 border-[#6B21A8] text-white max-w-3xl w-full break-words mx-auto px-4 py-4 rounded-2xl bg-[#0b0b12]">
-            <h3 className="flex justify-center text-[#6B21A8] text-2xl font-extrabold mb-4">
+          <div className="mx-auto w-full max-w-3xl break-words rounded-3xl border border-white/10 bg-slate-950/80 px-4 py-4 text-white">
+            <h3 className="mb-4 flex justify-center text-2xl font-black text-cyan-100">
               Quer conhecer mais sobre a Jala?
             </h3>
             <div className="relative w-full pb-[56.25%]">
@@ -79,7 +79,7 @@ function Education(): JSX.Element {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

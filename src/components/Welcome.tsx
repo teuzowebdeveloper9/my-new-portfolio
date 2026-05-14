@@ -5,6 +5,7 @@ import { RiSparkling2Line } from "react-icons/ri";
 import { SiGooglecloud } from "react-icons/si";
 import { TbFileCv } from "react-icons/tb";
 import animationHello from "../animations/Animation - 1749818775025.json";
+import { profile } from "../data/profile";
 import portraitMain from "../images/portrait-main.png";
 import portraitSecondary from "../images/portrait-secondary.png";
 import teuzoDev from "../images/teuzo.png";
@@ -20,14 +21,6 @@ const photoStack: Photo[] = [
   { src: teuzoDev, alt: "Retrato do Mateus" },
   { src: portraitSecondary, alt: "Foto complementar do Mateus" },
 ];
-
-const badges = [
-  "Full Stack | IA Engineer",
-  "React / Next.js / NestJS",
-  "Java / Spring Boot",
-  "RAG · Vetores · Multiagentes",
-  "GCP · Docker · CI/CD",
-] as const;
 
 function downloadFile(path: string, fileName: string): void {
   const link = document.createElement("a");
@@ -49,43 +42,39 @@ function Welcome(): JSX.Element {
   };
 
   const handleGithubOpen = (): void => {
-    window.open("https://github.com/teuzowebdeveloper9", "_blank", "noreferrer");
+    window.open(profile.github, "_blank", "noreferrer");
   };
 
   return (
-    <div className="relative w-full mx-auto min-h-screen border-b-4 border-[#6B21A8] bg-[#0D0D0D] mb-10 flex flex-col items-center px-4 py-10 overflow-hidden">
+    <section className="relative mx-auto flex min-h-screen w-full flex-col items-center overflow-hidden border-b border-white/10 bg-[#07070b] px-4 py-10">
       <HeroGlow />
-      <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div className="grid w-full max-w-6xl grid-cols-1 items-center gap-10 lg:grid-cols-2">
         <div className="space-y-5">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1f102f] text-[#a855f7] border border-[#6B21A8]">
+          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-300/25 bg-cyan-300/10 px-4 py-2 text-cyan-100">
             <RiSparkling2Line className="text-xl" />
-            <span>Lasy AI — Full Stack / IA Engineer</span>
+            <span>Lasy AI — Full Stack / AI Engineer</span>
           </div>
 
-          <div className="flex items-center gap-3 text-[#6B21A8]">
-            <h1 className="text-3xl md:text-4xl font-extrabold leading-tight">
-              Mateus da Silva Oliveira
+          <div className="flex items-center gap-3 text-purple-200">
+            <h1 className="text-4xl font-black leading-tight tracking-tight text-white md:text-6xl">
+              {profile.name}
             </h1>
             <Lottie
-              className="h-[80px] md:h-[110px]"
+              className="h-[78px] md:h-[110px]"
               animationData={animationHello}
               loop
             />
           </div>
 
-          <p className="text-base md:text-lg text-gray-200 leading-relaxed">
-            Construo produtos de ponta a ponta com foco em IA aplicada,
-            performance e cloud-first. Hoje na Lasy AI, lidero fluxos
-            multiagentes e pipelines de streaming, integrando GPT/Claude/Mistral
-            com bases vetoriais e automações robustas. Experiência sólida em
-            arquiteturas escaláveis, SSR, segurança e entregas contínuas.
+          <p className="text-lg leading-relaxed text-slate-200 md:text-xl">
+            {profile.summary}
           </p>
 
           <div className="flex flex-wrap gap-2">
-            {badges.map((badge) => (
+            {profile.focusAreas.map((badge) => (
               <span
                 key={badge}
-                className="px-3 py-1 rounded-full border border-[#6B21A8] text-xs md:text-sm text-[#c084fc] bg-[#1a1625]"
+                className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-slate-200 md:text-sm"
               >
                 {badge}
               </span>
@@ -96,14 +85,14 @@ function Welcome(): JSX.Element {
             <button
               type="button"
               onClick={handleCvDownload}
-              className="bg-[#6B21A8] hover:bg-transparent hover:text-[#6B21A8] border-2 border-[#6B21A8] h-[50px] px-4 gap-2 flex items-center justify-center text-[#0D0D0D] font-extrabold rounded transition-colors"
+              className="flex h-[50px] items-center justify-center gap-2 rounded-xl border border-cyan-300 bg-cyan-300 px-4 font-extrabold text-slate-950 transition hover:-translate-y-0.5 hover:bg-transparent hover:text-cyan-100"
             >
               Baixar CV <TbFileCv className="text-2xl" />
             </button>
             <button
               type="button"
               onClick={handleCoverLetterDownload}
-              className="bg-transparent border-2 border-[#6B21A8] text-[#6B21A8] hover:bg-[#6B21A8] hover:text-[#0D0D0D] h-[50px] px-4 gap-2 flex items-center justify-center font-extrabold rounded transition-colors"
+              className="flex h-[50px] items-center justify-center gap-2 rounded-xl border border-purple-300/40 bg-purple-300/10 px-4 font-extrabold text-purple-100 transition hover:-translate-y-0.5 hover:bg-purple-300 hover:text-slate-950"
             >
               Carta de apresentação{" "}
               <HiOutlineDownload className="text-xl" />
@@ -111,7 +100,7 @@ function Welcome(): JSX.Element {
             <button
               type="button"
               onClick={handleGithubOpen}
-              className="bg-[#0D0D0D] border-2 border-[#6B21A8] hover:bg-[#6B21A8] hover:text-[#0D0D0D] h-[50px] px-4 gap-2 flex items-center justify-center text-[#6B21A8] font-extrabold rounded transition-colors"
+              className="flex h-[50px] items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 font-extrabold text-slate-200 transition hover:-translate-y-0.5 hover:border-cyan-300/40 hover:text-cyan-100"
             >
               GitHub <FaGithub className="text-2xl" />
             </button>
@@ -123,26 +112,26 @@ function Welcome(): JSX.Element {
             <img
               src={photoStack[0].src}
               alt={photoStack[0].alt}
-              className="rounded-2xl w-[320px] h-[320px] object-cover shadow-[0_0_40px_rgba(107,33,168,0.4)] absolute inset-0 m-auto border-4 border-[#6B21A8]"
+              className="absolute inset-0 m-auto h-[320px] w-[320px] rounded-3xl border border-cyan-300/30 object-cover shadow-[0_0_80px_rgba(34,211,238,0.22)]"
             />
             <img
               src={photoStack[1].src}
               alt={photoStack[1].alt}
-              className="rounded-xl w-[140px] h-[140px] object-cover shadow-lg border-4 border-white animate-float absolute -top-6 -left-4"
+              className="absolute -left-4 -top-6 h-[140px] w-[140px] animate-float rounded-2xl border border-white/25 object-cover shadow-lg"
             />
             <img
               src={photoStack[2].src}
               alt={photoStack[2].alt}
-              className="rounded-xl w-[140px] h-[140px] object-cover shadow-lg border-4 border-white animate-float absolute -bottom-6 -right-4"
+              className="absolute -bottom-6 -right-4 h-[140px] w-[140px] animate-float rounded-2xl border border-white/25 object-cover shadow-lg"
             />
           </div>
 
-          <div className="mt-6 p-4 border border-[#6B21A8] rounded-2xl bg-[#0b0b12] text-gray-200 space-y-2">
-            <div className="flex items-center gap-2 text-[#6B21A8] font-semibold">
+          <div className="mt-6 space-y-2 rounded-3xl border border-white/10 bg-white/[0.035] p-4 text-slate-200">
+            <div className="flex items-center gap-2 font-semibold text-cyan-100">
               <SiGooglecloud />
               <span>Cloud & IA em produção</span>
             </div>
-            <p className="text-sm leading-relaxed">
+            <p className="text-sm leading-relaxed text-slate-300">
               Pipelines de streaming, RAG com bases vetoriais, agentes
               autônomos e observabilidade são o meu dia a dia. Escalo com
               Docker, CI/CD e GCP, mantendo segurança, governança e tempo de
@@ -151,7 +140,7 @@ function Welcome(): JSX.Element {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

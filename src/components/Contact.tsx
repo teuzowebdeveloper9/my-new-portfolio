@@ -1,22 +1,43 @@
-function Contact(): JSX.Element {
-  const email = "mateussoftwaredeveloper@gmail.com";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { profile } from "../data/profile";
 
+function Contact(): JSX.Element {
   return (
-    <section className="w-full mx-auto bg-[#0D0D0D] px-4 py-12">
-      <div className="max-w-4xl mx-auto border-2 border-[#6B21A8] rounded-3xl bg-[#0b0b12] px-6 py-8 text-center space-y-4 shadow-[0_0_30px_rgba(107,33,168,0.25)]">
-        <h2 className="text-2xl md:text-3xl font-extrabold text-[#c084fc]">
-          Vamos conversar?
+    <section className="mx-auto w-full bg-[#07070b] px-4 py-20">
+      <div className="mx-auto max-w-5xl rounded-[2rem] border border-white/10 bg-[radial-gradient(700px_at_80%_10%,rgba(34,211,238,0.16),transparent_55%),rgba(255,255,255,0.035)] px-6 py-10 text-center shadow-[0_28px_90px_rgba(0,0,0,0.35)]">
+        <h2 className="text-3xl font-black tracking-tight text-white md:text-5xl">
+          Vamos construir algo que pareça produto de verdade?
         </h2>
-        <p className="text-gray-200">
-          Conte comigo para construir produtos com IA, cloud e alta
-          performance. Me envie um e-mail e falamos sobre o próximo desafio.
+        <p className="mx-auto mt-4 max-w-2xl text-slate-300">
+          Conte comigo para produtos com IA, cloud, arquitetura limpa e uma camada visual que ajude a vender a ideia.
         </p>
-        <a
-          href={`mailto:${email}`}
-          className="inline-flex items-center justify-center gap-2 h-[50px] px-5 rounded-full bg-[#6B21A8] text-[#0D0D0D] font-extrabold hover:bg-transparent hover:text-[#6B21A8] border-2 border-[#6B21A8] transition-colors"
-        >
-          Mandar e-mail para {email}
-        </a>
+
+        <div className="mt-7 flex flex-wrap justify-center gap-3">
+          <a
+            href={`mailto:${profile.email}`}
+            className="inline-flex min-h-12 items-center justify-center rounded-xl border border-cyan-300 bg-cyan-300 px-5 font-extrabold text-slate-950 transition hover:-translate-y-0.5 hover:bg-transparent hover:text-cyan-100"
+          >
+            {profile.email}
+          </a>
+          <a
+            href={profile.github}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-5 font-extrabold text-slate-200 transition hover:border-cyan-300/40 hover:text-cyan-100"
+          >
+            <FaGithub />
+            GitHub
+          </a>
+          <a
+            href={profile.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-5 font-extrabold text-slate-200 transition hover:border-cyan-300/40 hover:text-cyan-100"
+          >
+            <FaLinkedin />
+            LinkedIn
+          </a>
+        </div>
       </div>
     </section>
   );
