@@ -1,0 +1,17 @@
+{
+  "name": "Mateus da Silva Oliveira Portfolio",
+  "short_name": "Mateus Portfolio",
+  "description": "Full stack portfolio focused on product engineering, cloud delivery, and applied AI workflows.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07070b",
+  "theme_color": "#07070b",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

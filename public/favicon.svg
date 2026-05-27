@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Mateus portfolio favicon">
+  <defs>
+    <linearGradient id="mark-gradient" x1="10" y1="8" x2="54" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22d3ee" />
+      <stop offset="0.52" stop-color="#d7ff4d" />
+      <stop offset="1" stop-color="#ff4d8d" />
+    </linearGradient>
+    <radialGradient id="aura" cx="50%" cy="42%" r="58%">
+      <stop stop-color="#22d3ee" stop-opacity="0.32" />
+      <stop offset="0.58" stop-color="#ff4d8d" stop-opacity="0.16" />
+      <stop offset="1" stop-color="#07070b" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#07070b" />
+  <rect x="1.5" y="1.5" width="61" height="61" rx="13" fill="url(#aura)" />
+  <path d="M12 15h40v34H12z" fill="#0c0d13" stroke="url(#mark-gradient)" stroke-width="2" />
+  <path d="M18 47V18h8l6 11 6-11h8v29h-7V30l-6 11h-2l-6-11v17z" fill="url(#mark-gradient)" />
+  <path d="M15 12h14M35 52h14M52 20v8M12 36v8" fill="none" stroke="#f8fafc" stroke-opacity="0.34" stroke-width="2" stroke-linecap="round" />
+  <circle cx="51" cy="14" r="2.5" fill="#d7ff4d" />
+  <circle cx="13" cy="51" r="2" fill="#22d3ee" />
+</svg>

@@ -73,7 +73,7 @@ function Welcome(): JSX.Element {
         <div className="space-y-6">
           <div className="inline-flex items-center gap-2 border border-cyan-300/25 bg-cyan-300/10 px-4 py-2 text-cyan-100">
             <RiSparkling2Line className="text-xl" />
-            <span>Lasy AI / Full Stack / AI Engineer</span>
+            <span>Product Engineering / Full Stack / Applied AI</span>
           </div>
 
           <div className="space-y-3 text-purple-200">
