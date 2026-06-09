@@ -10,7 +10,7 @@ function SectionHeading({
   title,
   description,
   align = "center",
-}: SectionHeadingProps): JSX.Element {
+}: SectionHeadingProps) {
   const alignment = align === "center" ? "text-center mx-auto" : "";
 
   return (

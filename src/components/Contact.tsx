@@ -1,47 +1,29 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { profile } from "../data/profile";
-import SectionShell from "./ui/SectionShell";
 
-function Contact(): JSX.Element {
+function Contact() {
   return (
-    <SectionShell id="contact" tone="contact" innerClassName="max-w-5xl">
-      <div className="rounded-lg border border-white/10 bg-[radial-gradient(700px_at_80%_10%,rgba(34,211,238,0.16),transparent_55%),rgba(255,255,255,0.035)] px-6 py-10 text-center shadow-[0_28px_90px_rgba(0,0,0,0.35)]">
-        <h2 className="text-3xl font-black text-white md:text-5xl">
-          Vamos construir algo que pareça produto de verdade?
-        </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-slate-300">
-          Conte comigo para produtos com IA, cloud, arquitetura limpa e uma
-          camada visual que ajude a vender a ideia.
+    <footer id="contact" className="section-shell bg-white border-t border-gray-100">
+      <div className="container-clean text-center">
+        <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter">Vamos conversar?</h2>
+        <div className="h-2 w-32 bg-black mx-auto mb-12"></div>
+        <p className="text-gray-500 text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
+          Estou disponível para novas oportunidades e pronto para aplicar IA e Cloud no seu próximo grande produto.
         </p>
-
-        <div className="mt-7 flex flex-wrap justify-center gap-3">
-          <a
-            href={`mailto:${profile.email}`}
-            className="inline-flex min-h-12 items-center justify-center rounded-md border border-cyan-300 bg-cyan-300 px-5 font-extrabold text-slate-950 transition hover:-translate-y-0.5 hover:bg-transparent hover:text-cyan-100"
-          >
-            {profile.email}
-          </a>
-          <a
-            href={profile.github}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-white/10 bg-white/[0.04] px-5 font-extrabold text-slate-200 transition hover:border-cyan-300/40 hover:text-cyan-100"
-          >
-            <FaGithub />
-            GitHub
-          </a>
-          <a
-            href={profile.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-white/10 bg-white/[0.04] px-5 font-extrabold text-slate-200 transition hover:border-cyan-300/40 hover:text-cyan-100"
-          >
-            <FaLinkedin />
-            LinkedIn
-          </a>
+        <a 
+          href={`mailto:${profile.email}`} 
+          className="text-2xl md:text-5xl font-black hover:text-gray-600 transition-colors break-all tracking-tighter"
+        >
+          {profile.email}
+        </a>
+        <div className="mt-16 flex justify-center gap-10 text-gray-400 font-bold uppercase tracking-widest text-xs">
+          <a href={profile.github} target="_blank" rel="noreferrer" className="hover:text-black transition-colors">GitHub</a>
+          <a href={profile.linkedin} target="_blank" rel="noreferrer" className="hover:text-black transition-colors">LinkedIn</a>
         </div>
+        <p className="mt-32 text-xs text-gray-300 font-bold uppercase tracking-[0.2em]">
+          © {new Date().getFullYear()} {profile.name} — Made with precision.
+        </p>
       </div>
-    </SectionShell>
+    </footer>
   );
 }
 
