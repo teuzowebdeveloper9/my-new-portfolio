@@ -25,7 +25,7 @@ function SectionShell({
   className = "",
   innerClassName = "max-w-6xl space-y-8",
   children,
-}: SectionShellProps): JSX.Element {
+}: SectionShellProps) {
   return (
     <section
       id={id}

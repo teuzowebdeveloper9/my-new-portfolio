@@ -1,91 +1,90 @@
 @import "tailwindcss";
 
 :root {
-  --cursor-x: 50vw;
-  --cursor-y: 42vh;
+  --background: #ffffff;
+  --foreground: #111111;
+  --primary: #000000;
+  --secondary: #444444;
+  --accent: #06b6d4;
+  --muted: #666666;
+  --border: #e5e7eb;
 }
 
 html {
-  background: #07070b;
+  background: var(--background);
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  min-width: 320px;
-  background:
-    radial-gradient(circle at 18% 0%, rgba(255, 77, 141, 0.1), transparent 26rem),
-    radial-gradient(circle at 84% 8%, rgba(34, 211, 238, 0.12), transparent 24rem),
-    radial-gradient(circle at 50% 100%, rgba(215, 255, 77, 0.06), transparent 22rem),
-    #07070b;
+  min-height: 100vh;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
-  text-rendering: geometricPrecision;
 }
 
-body::selection {
-  background: rgba(215, 255, 77, 0.88);
-  color: #07070b;
+/* Base styles for the clean look */
+.container-clean {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
+.text-gradient {
+  background: linear-gradient(to right, #000000, #555555);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.portfolio-cursor-aura {
-  position: fixed;
-  inset: 0;
-  z-index: 15;
-  pointer-events: none;
-  background:
-    radial-gradient(
-      360px circle at var(--cursor-x) var(--cursor-y),
-      rgba(34, 211, 238, 0.16),
-      rgba(255, 77, 141, 0.08) 34%,
-      transparent 68%
-    );
-  mix-blend-mode: screen;
-  opacity: 0.8;
+.card-clean {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
 }
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+.card-clean:hover {
+  border-color: #000000;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  transform: translateY(-2px);
 }
 
-.animate-float {
-  animation: float 3s ease-in-out infinite;
+/* Typography */
+h1, h2, h3, h4 {
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #000000;
 }
 
-@keyframes scanline {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(100%);
-  }
+/* Section Shell refinement */
+.section-shell {
+  padding: 8rem 0;
 }
 
-.animate-scanline {
-  animation: scanline 5s linear infinite;
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-  }
+.animate-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
 
-  .portfolio-cursor-aura {
-    display: none;
+/* Buttons */
+.btn-primary {
+  @apply px-8 py-4 bg-black text-white font-bold rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center gap-2;
+}
+
+.btn-secondary {
+  @apply px-8 py-4 bg-white text-black border border-gray-200 font-bold rounded-xl transition-all hover:border-black active:scale-[0.98] flex items-center gap-2;
+}
+
+@media (max-width: 768px) {
+  .section-shell {
+    padding: 4rem 0;
   }
 }

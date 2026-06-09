@@ -1,22 +1,14 @@
-import CodingAgents from "./components/CodingAgents";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import ProjectSection from "./components/ProjectSection";
 import Contact from "./components/Contact";
-import Education from "./components/Education";
-import ExperienceLayer from "./components/ExperienceLayer";
-import Projects from "./components/Projects";
-import Tecnologies from "./components/Tecnologies";
-import Welcome from "./components/Welcome";
-import Works from "./components/Works";
 
-function App(): JSX.Element {
+function App() {
   return (
-    <main className="min-h-screen w-full overflow-x-hidden bg-[#07070b] text-white">
-      <ExperienceLayer />
-      <Welcome />
-      <Tecnologies />
-      <CodingAgents />
-      <Projects />
-      <Works />
-      <Education />
+    <main className="min-h-screen w-full bg-white text-black selection:bg-black selection:text-white">
+      <Navbar />
+      <Hero />
+      <ProjectSection />
       <Contact />
     </main>
   );
