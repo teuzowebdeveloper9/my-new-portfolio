@@ -1,7 +1,10 @@
 export type SectionId =
   | "home"
-  | "fullstack"
-  | "frontend"
+  | "mindset"
+  | "skills"
+  | "projects"
+  | "experience"
+  | "education"
   | "contact";
 
 export type NavigationItem = {
@@ -11,7 +14,9 @@ export type NavigationItem = {
 
 export const navigationItems: NavigationItem[] = [
   { id: "home", label: "Início" },
-  { id: "fullstack", label: "Full Stack / Backend" },
-  { id: "frontend", label: "Front End" },
+  { id: "skills", label: "Stack" },
+  { id: "projects", label: "Projetos" },
+  { id: "experience", label: "Experiência" },
+  { id: "education", label: "Formação" },
   { id: "contact", label: "Contato" },
 ];

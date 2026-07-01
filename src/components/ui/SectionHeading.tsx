@@ -15,10 +15,10 @@ function SectionHeading({
 
   return (
     <div className={`space-y-3 max-w-3xl ${alignment}`}>
-      <span className="inline-flex border border-cyan-300/25 bg-cyan-300/10 px-3 py-1 text-xs font-bold uppercase text-cyan-200">
+      <span className="inline-flex rounded-md border border-cyan-300/25 bg-cyan-300/10 px-3 py-1 text-xs font-bold uppercase text-cyan-200">
         {eyebrow}
       </span>
-      <h2 className="text-3xl md:text-5xl font-black text-white">
+      <h2 className="text-3xl font-black text-white md:text-5xl">
         {title}
       </h2>
       <p className="text-base leading-relaxed text-slate-300">{description}</p>
