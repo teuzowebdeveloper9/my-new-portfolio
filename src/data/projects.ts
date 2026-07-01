@@ -1,62 +1,97 @@
 export type Project = {
   title: string;
+  eyebrow: string;
   description: string;
+  challenge: string;
+  solution: string;
   stack: string[];
   githubUrl?: string;
   liveUrl?: string;
-  category: 'fullstack' | 'frontend';
-  metrics?: string[];
-  highlights?: string[];
+  accent: "cyan" | "lime" | "magenta" | "blue";
 };
 
 export const projects: Project[] = [
   {
     title: "DeployForge AI",
-    description: "Plataforma de código AI-first distribuída em microserviços. Focada em automação de deploy e geração de código via prompts.",
-    stack: ["Next.js", "Go", "FastAPI", "NestJS", "PostgreSQL", "LangChain", "Redis", "Docker", "CI/CD"],
+    eyebrow: "AI-first platform",
+    description:
+      "Plataforma para gerar, versionar e validar aplicações completas a partir de prompts, com monorepo multi-serviço e observabilidade.",
+    challenge:
+      "Unificar geração de código, validação, filas e artefatos em uma arquitetura que pudesse ser executada localmente e evoluir para produção.",
+    solution:
+      "Go para runner de CI, Python/FastAPI para agent-service, NestJS para API, Next.js no frontend, MinIO S3-compatible para artefatos e Prometheus/Loki/Grafana para observabilidade.",
+    stack: [
+      "Go",
+      "FastAPI",
+      "NestJS",
+      "Next.js",
+      "PostgreSQL",
+      "Redis",
+      "BullMQ",
+      "MinIO",
+      "Docker",
+      "GitHub Actions",
+    ],
     githubUrl: "https://github.com/teuzowebdeveloper9/deployforge-ai",
-    category: "fullstack",
-    highlights: ["Arquitetura de Microserviços", "Pipeline CI/CD", "IA Generativa", "GitFlow"],
+    accent: "cyan",
   },
   {
-    title: "Chess Ledger",
-    description: "Sistema de xadrez online com motor de ledger para integridade de jogadas e partidas em tempo real.",
-    stack: ["NestJS", "DynamoDB", "React", "Vite", "Socket.io", "TypeScript", "Clean Architecture"],
-    category: "fullstack",
-    highlights: ["WebSockets", "Ledger System", "Real-time", "Clean Architecture"],
+    title: "Microservices K8s",
+    eyebrow: "Cloud architecture",
+    description:
+      "Arquitetura de microsserviços com comunicação síncrona e assíncrona, deploy em Kubernetes e pipeline automatizado.",
+    challenge:
+      "Criar um ambiente distribuído com serviços independentes, filas resilientes, roteamento e deploy automatizado em cluster.",
+    solution:
+      "C# .NET, RabbitMQ, gRPC, Docker, manifests Kubernetes, NGINX Ingress, GKE e GitHub Actions para build, push e deploy.",
+    stack: [
+      "C# .NET",
+      "RabbitMQ",
+      "gRPC",
+      "Kubernetes",
+      "GKE",
+      "Docker",
+      "MySQL",
+      "GitHub Actions",
+      "NGINX",
+    ],
+    githubUrl: "https://github.com/teuzowebdeveloper9/microservices",
+    accent: "lime",
   },
   {
-    title: "anotEX.ai (SaaS)",
-    description: "Plataforma IA que transforma conteúdos educacionais em materiais de estudo estruturados como flashcards e mapas mentais.",
-    stack: ["NestJS", "React", "Supabase", "Upstash", "Redis", "BullMQ", "Cloudflare R2"],
-    liveUrl: "https://anoteexai.tight-resonance-42ff.workers.dev/",
-    category: "fullstack",
-    highlights: ["SaaS Real", "RAG", "Processamento Assíncrono"],
+    title: "RAG CV Creator",
+    eyebrow: "AI automation",
+    description:
+      "Plataforma de geração inteligente de currículos com RAG, busca semântica, filas assíncronas e suporte multi-LLM.",
+    challenge:
+      "Transformar documentos e histórico profissional em currículos direcionados para vagas, mantendo contexto, consistência e exportação real.",
+    solution:
+      "Django, LangChain, LangGraph, Qdrant, Celery, Redis e MinIO para orquestrar documentos, embeddings, geração e armazenamento.",
+    stack: [
+      "Python",
+      "Django",
+      "LangChain",
+      "LangGraph",
+      "Qdrant",
+      "Celery",
+      "Redis",
+      "MinIO",
+      "React",
+    ],
+    githubUrl: "https://github.com/teuzowebdeveloper9/cv-creator-with-rag",
+    accent: "magenta",
   },
   {
-    title: "API Fury",
-    description: "Simulador de alta performance para integração com Meta Ads API, focado em resiliência e processamento de filas.",
-    stack: ["Node.js", "Clean Arch", "Redis", "BullMQ", "Render"],
-    githubUrl: "https://github.com/teuzowebdeveloper9/api-fury",
-    category: "fullstack",
-    highlights: ["Meta Ads API", "High Availability", "Queue Management"],
+    title: "Send Email SES",
+    eyebrow: "AWS integration",
+    description:
+      "API REST para envio de emails via AWS SES, construída com Clean Architecture e separação clara entre domínio e infraestrutura.",
+    challenge:
+      "Integrar um serviço AWS real sem acoplar regras de negócio ao framework ou aos detalhes do provedor.",
+    solution:
+      "Java 17, Spring Boot, Maven e arquitetura hexagonal com fluxo Controller, Application Service, Use Case, Gateway e Infra.",
+    stack: ["Java 17", "Spring Boot", "AWS SES", "Maven", "Clean Architecture"],
+    githubUrl: "https://github.com/teuzowebdeveloper9/send-email-ses",
+    accent: "blue",
   },
-  {
-    title: "Carti Music Experience",
-    description: "Uma imersão visual e sonora dedicada ao artista Playboi Carti, explorando diferentes eras artísticas.",
-    stack: ["React", "NestJS", "Supabase", "Mistral AI", "CSS Experimental"],
-    githubUrl: "https://github.com/teuzowebdeveloper9/carti-music",
-    liveUrl: "https://carti-front.vercel.app/",
-    category: "frontend",
-    highlights: ["Experiência Imersiva", "Sincronização de Lyrics", "UI/UX Experimental"],
-  },
-  {
-    title: "Djavan: A Vida em Arte",
-    description: "Site experimental e narrativo que percorre a trajetória e a discografia do cantor Djavan.",
-    stack: ["React", "Vite", "Framer Motion", "Tailwind CSS"],
-    githubUrl: "https://github.com/teuzowebdeveloper9/djavan-site",
-    liveUrl: "https://djavan-site.vercel.app/",
-    category: "frontend",
-    highlights: ["Storytelling", "Animações Fluidas", "Design Minimalista"],
-  }
 ];

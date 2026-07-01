@@ -1,82 +1,136 @@
-import { BiLogoPostgresql, BiLogoSpringBoot } from "react-icons/bi";
-import { DiRedis } from "react-icons/di";
-import { FaDocker, FaNodeJs } from "react-icons/fa";
-import { FaJava, FaReact } from "react-icons/fa6";
-import { IoLogoJavascript } from "react-icons/io5";
 import type { IconType } from "react-icons";
 import {
-  SiCloudflare,
-  SiDotnet,
-  SiGooglecloud,
-  SiJest,
-  SiJunit5,
-  SiKubernetes,
-  SiMongodb,
-  SiMysql,
-  SiNestjs,
-  SiNextdotjs,
-  SiOpenai,
-  SiPrisma,
-  SiSupabase,
-  SiTypescript,
-} from "react-icons/si";
-
-export type TechnologyItem = {
-  icon: IconType;
-  label: string;
-};
+  FiActivity,
+  FiCloud,
+  FiCode,
+  FiCpu,
+  FiGitBranch,
+  FiLayers,
+  FiLock,
+  FiServer,
+} from "react-icons/fi";
 
 export type TechnologyCategory = {
   title: string;
   description: string;
-  items: TechnologyItem[];
+  items: string[];
+  icon: IconType;
+  accent: "cyan" | "lime" | "magenta" | "blue";
 };
 
 export const technologyCategories: TechnologyCategory[] = [
   {
-    title: "Frontend",
-    description: "Interfaces responsivas, performaticas e com cuidado de produto.",
+    title: "Cloud Storage & AWS",
+    description:
+      "Projetos com foco em armazenamento, segurança, custo e automação na camada cloud.",
     items: [
-      { icon: FaReact, label: "React" },
-      { icon: SiNextdotjs, label: "Next.js / SSR" },
-      { icon: SiTypescript, label: "TypeScript" },
-      { icon: IoLogoJavascript, label: "JavaScript" },
+      "Amazon S3",
+      "S3 Lifecycles",
+      "Bucket Policies",
+      "Batch Operations",
+      "S3 Inventory",
+      "Server Access Logging",
+      "Lambda",
+      "API Gateway",
+      "Step Functions",
+      "SQS/SNS",
+      "IAM",
+      "KMS",
+      "DynamoDB",
+      "CloudWatch",
+      "Bedrock",
     ],
+    icon: FiCloud,
+    accent: "cyan",
   },
   {
-    title: "Back-end & APIs",
-    description: "Servicos tipados, modulares e prontos para integracoes reais.",
+    title: "Microsserviços & Backend",
+    description:
+      "Serviços separados por domínio, comunicação assíncrona e APIs prontas para evolução.",
     items: [
-      { icon: SiNestjs, label: "NestJS" },
-      { icon: FaNodeJs, label: "Node.js" },
-      { icon: BiLogoSpringBoot, label: "Spring Boot" },
-      { icon: SiDotnet, label: ".NET / C#" },
-      { icon: FaJava, label: "Java" },
+      "Python",
+      "Django",
+      "FastAPI",
+      "Golang",
+      "Node.js",
+      "NestJS",
+      "C# .NET",
+      "Java Spring Boot",
+      "REST APIs",
+      "gRPC",
+      "RabbitMQ",
+      "BullMQ",
     ],
+    icon: FiServer,
+    accent: "lime",
   },
   {
-    title: "IA, Agentes & Dados",
-    description: "LLMs, bancos relacionais, cache e dados para experiencias inteligentes.",
+    title: "IA, RAG & Agentes",
+    description:
+      "Uso de LLMs para produto, automação interna, geração de código e agentes especializados.",
     items: [
-      { icon: SiOpenai, label: "GPT / Claude / Mistral" },
-      { icon: BiLogoPostgresql, label: "PostgreSQL" },
-      { icon: SiSupabase, label: "Supabase" },
-      { icon: SiMongodb, label: "MongoDB" },
-      { icon: SiMysql, label: "MySQL" },
-      { icon: DiRedis, label: "Redis" },
-      { icon: SiPrisma, label: "Prisma" },
+      "Claude Code",
+      "OpenAI Codex",
+      "GPT",
+      "Claude",
+      "Mistral",
+      "LangChain",
+      "LangGraph",
+      "Qdrant",
+      "RAG",
+      "Fine-tuning",
+      "Prompt Engineering",
+      "Agentes WhatsApp",
     ],
+    icon: FiCpu,
+    accent: "magenta",
   },
   {
-    title: "Cloud, DevOps & Qualidade",
-    description: "Deploy, observabilidade e testes para manter produto em pe.",
+    title: "DevOps & Plataforma",
+    description:
+      "Entrega contínua, infraestrutura como código, observabilidade e ambientes containerizados.",
     items: [
-      { icon: FaDocker, label: "Docker" },
-      { icon: SiGooglecloud, label: "GCP" },
-      { icon: SiCloudflare, label: "Cloudflare Workers" },
-      { icon: SiKubernetes, label: "Kubernetes" },
-      { icon: SiJest, label: "Jest" },
-      { icon: SiJunit5, label: "JUnit" },
+      "Terraform",
+      "CloudFormation",
+      "Kubernetes",
+      "GCP GKE",
+      "Docker",
+      "GitHub Actions",
+      "Cloudflare Workers",
+      "Traefik",
+      "NGINX",
+      "Prometheus",
+      "Grafana",
+      "Loki",
     ],
+    icon: FiGitBranch,
+    accent: "blue",
+  },
+];
+
+export const capabilityHighlights = [
+  {
+    title: "Arquitetura limpa",
+    description:
+      "Separação de domínio, aplicação e infraestrutura para manter evolução sem acoplamento desnecessário.",
+    icon: FiLayers,
+  },
+  {
+    title: "Segurança cloud",
+    description:
+      "Uso de IAM, KMS, políticas de bucket, isolamento e revisão de fluxos sensíveis em produtos com IA.",
+    icon: FiLock,
+  },
+  {
+    title: "Observabilidade",
+    description:
+      "Métricas, logs, health-checks, CLIs internas e rollback rápido para operar software real.",
+    icon: FiActivity,
+  },
+  {
+    title: "Código de produto",
+    description:
+      "Frontend, backend, filas e infraestrutura conectados em uma experiência que resolve problema real.",
+    icon: FiCode,
   },
 ];

@@ -1,21 +1,63 @@
 export const profile = {
   name: "Mateus da Silva Oliveira",
-  role: "Full Stack Developer @ Lasy AI",
-  email: "mateussoftwaredeveloper@gmail.com",
+  role: "Desenvolvedor de Software",
+  headline:
+    "Construo produtos AI-first, arquiteturas cloud e automações que saem do protótipo e chegam em produção.",
+  email: "mateussoftwaredveeloper@gmail.com",
   github: "https://github.com/teuzowebdeveloper9",
-  linkedin: "https://www.linkedin.com/in/matheus-da-silva-%F0%9F%87%A7%F0%9F%87%B7-b96541380/",
+  linkedin:
+    "https://www.linkedin.com/in/matheus-da-silva-%F0%9F%87%A7%F0%9F%87%B7-b96541380/",
   location: "Remoto — Brasil",
-  summary: `Atualmente atuo como Desenvolvedor Full Stack na Lasy AI, uma startup de Inteligência Artificial focada em criação de aplicações web por meio de prompts, com geração, edição e visualização de resultados em tempo real. 
-
-No dia a dia, trabalho entre frontend, backend e infraestrutura cloud, contribuindo para a evolução da plataforma com foco em performance, segurança e escalabilidade. Tenho atuado com Cloudflare Workers, execução em edge, sandboxes isolados, filas assíncronas, streaming em tempo real e wrappers de IA para tornar a integração com modelos mais flexível e robusta. 
-
-Também participo da construção de features estratégicas da plataforma, como fluxos com agentes de IA, ferramentas customizadas, processamento assíncrono e mecanismos de retry, recovery e monitoramento. Essa experiência tem aprofundado minha visão sobre arquitetura distribuída, cloud, segurança em aplicações com IA e engenharia de software moderna.`,
-  metrics: [
-    { label: "Atuação", value: "IA & Edge", icon: "cloud" },
-    { label: "Experiência", value: "Full Stack", icon: "code" },
-    { label: "Foco", value: "Escalabilidade", icon: "trending-up" },
-    { label: "Tech Stack", value: "AI First", icon: "cpu" },
+  availability: "Disponível para oportunidades cloud, IA e produto",
+  cvUrl: "/mateus-cloud-storage-cv.pdf",
+  summary:
+    "Desenvolvedor de Software com experiência em arquiteturas cloud, microsserviços, automação e produtos com IA. Trabalho com Python, Golang, AWS, GCP, Kubernetes, Cloudflare e agentes de código para transformar requisitos complexos em sistemas escaláveis, observáveis e prontos para operação real.",
+  englishLevel: {
+    language: "Inglês",
+    level: "Fluente",
+    note: "Leitura técnica, documentação, comunicação e entrevistas em contexto de tecnologia.",
+    progress: 92,
+  },
+  highlights: [
+    {
+      value: "+4 anos",
+      label: "experiência em software",
+    },
+    {
+      value: "10+",
+      label: "microsserviços em produção",
+    },
+    {
+      value: "99%",
+      label: "sucesso em fluxos críticos",
+    },
+    {
+      value: "5-10s",
+      label: "latência em geração AI-first",
+    },
   ],
-  cvUrl: "/Mateus-da-Silva-Oliveira-Curriculo.pdf"
+  proofPoints: [
+    "Cloud storage com Amazon S3, lifecycles, policies, inventory, logs e batch operations.",
+    "Microsserviços em Python/Django e Golang com filas, retries, observabilidade e CI/CD.",
+    "Produtos de IA com Claude, Codex, RAG, Qdrant, fine-tuning e agentes para WhatsApp.",
+    "Infraestrutura com Kubernetes, Docker, GitHub Actions, Traefik, NGINX, GCP e AWS.",
+  ],
 } as const;
 
+export const contactOptions = [
+  {
+    label: "E-mail",
+    value: profile.email,
+    href: `mailto:${profile.email}`,
+  },
+  {
+    label: "GitHub",
+    value: "teuzowebdeveloper9",
+    href: profile.github,
+  },
+  {
+    label: "LinkedIn",
+    value: "Mateus da Silva Oliveira",
+    href: profile.linkedin,
+  },
+] as const;

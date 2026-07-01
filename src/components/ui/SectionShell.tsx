@@ -11,12 +11,12 @@ type SectionShellProps = PropsWithChildren<{
 }>;
 
 const toneClasses: Record<SectionTone, string> = {
-  base: "bg-[#07070b]",
-  ink: "bg-[#09090d]",
+  base: "bg-[#07080d]",
+  ink: "bg-[#0b0d14]",
   warm:
-    "bg-[radial-gradient(760px_at_8%_14%,rgba(247,184,75,0.09),transparent_55%),#08080c]",
+    "bg-[linear-gradient(180deg,rgba(215,255,77,0.05),transparent_34%),#080a0f]",
   contact:
-    "bg-[radial-gradient(760px_at_78%_8%,rgba(34,211,238,0.13),transparent_55%),#07070b]",
+    "bg-[linear-gradient(135deg,rgba(34,211,238,0.1),rgba(244,63,148,0.08)_48%,rgba(215,255,77,0.06)),#07080d]",
 };
 
 function SectionShell({
@@ -29,7 +29,8 @@ function SectionShell({
   return (
     <section
       id={id}
-      className={`relative w-full overflow-hidden border-b border-white/10 px-4 py-20 ${toneClasses[tone]} ${className}`}
+      data-reveal
+      className={`reveal-on-scroll relative w-full overflow-hidden border-b border-white/10 px-4 py-20 sm:px-6 lg:py-28 ${toneClasses[tone]} ${className}`}
     >
       <div className={`mx-auto w-full ${innerClassName}`}>{children}</div>
     </section>
