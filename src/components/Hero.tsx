@@ -7,7 +7,6 @@ import {
 } from "react-icons/fi";
 import type { PortfolioContent } from "../data/i18n";
 import { profile } from "../data/profile";
-import portraitImg from "../images/portrait-main.png";
 
 type HeroProps = {
   content: PortfolioContent["hero"];
@@ -127,20 +126,13 @@ function Hero({ content }: HeroProps) {
         >
           <div className="relative mx-auto max-w-[440px]">
             <div className="absolute -left-4 top-7 h-full w-full rounded-lg border border-cyan-300/20" />
-            <div className="relative overflow-hidden rounded-lg border border-white/10 bg-[#0b0d14] shadow-[0_28px_90px_rgba(0,0,0,0.42)]">
-              <img
-                src={portraitImg}
-                alt={profile.name}
-                className="h-[360px] w-full object-cover object-[50%_18%] saturate-[0.95] sm:h-[460px] lg:h-[520px]"
-              />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#07080d] via-[#07080d]/72 to-transparent p-5">
-                <p className="text-sm font-black text-lime-200">
-                  {content.portraitTitle}
-                </p>
-                <p className="mt-2 text-sm leading-relaxed text-slate-300">
-                  {content.portraitText}
-                </p>
-              </div>
+            <div className="relative overflow-hidden rounded-lg border border-white/10 bg-[#0b0d14] p-5 shadow-[0_28px_90px_rgba(0,0,0,0.42)]">
+              <p className="text-sm font-black text-lime-200">
+                {content.portraitTitle}
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">
+                {content.portraitText}
+              </p>
             </div>
           </div>
 
